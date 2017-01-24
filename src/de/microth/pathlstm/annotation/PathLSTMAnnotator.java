@@ -157,6 +157,9 @@ public class PathLSTMAnnotator extends Annotator {
 		Sentence parsed = SRLpipeline.parse(words);
 		
 		for (Predicate p : parsed.getPredicates()) {
+			// skip nominal predicates
+			if(p.getPOS().startsWith("N")) continue;
+			
 			IntPair predicateSpan = new IntPair(p.getIdx()-1, p.getIdx());
 			String predicateLemma = p.getLemma();
 
