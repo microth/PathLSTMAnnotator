@@ -2,7 +2,6 @@ package de.microth.pathlstm.annotation;
 
 import edu.illinois.cs.cogcomp.annotation.Annotator;
 import edu.illinois.cs.cogcomp.annotation.AnnotatorException;
-import edu.illinois.cs.cogcomp.annotation.BasicTextAnnotationBuilder;
 import edu.illinois.cs.cogcomp.core.datastructures.IntPair;
 import edu.illinois.cs.cogcomp.core.datastructures.ViewNames;
 import edu.illinois.cs.cogcomp.core.datastructures.textannotation.Constituent;
@@ -10,23 +9,13 @@ import edu.illinois.cs.cogcomp.core.datastructures.textannotation.PredicateArgum
 import edu.illinois.cs.cogcomp.core.datastructures.textannotation.TextAnnotation;
 import edu.illinois.cs.cogcomp.core.datastructures.textannotation.View;
 import edu.illinois.cs.cogcomp.core.utilities.configuration.ResourceManager;
-import edu.illinois.cs.cogcomp.srl.SRLProperties;
-import edu.illinois.cs.cogcomp.srl.SemanticRoleLabeler;
-import edu.illinois.cs.cogcomp.srl.config.SrlConfigurator;
-import edu.illinois.cs.cogcomp.srl.core.SRLManager;
-import edu.illinois.cs.cogcomp.srl.core.SRLType;
 import edu.illinois.cs.cogcomp.srl.experiment.TextPreProcessor;
-import edu.illinois.cs.cogcomp.srl.learn.SRLMulticlassInstance;
-import edu.illinois.cs.cogcomp.srl.learn.SRLPredicateInstance;
-import edu.illinois.cs.cogcomp.srl.learn.SRLPredicateStructure;
-import java_cup.parse_action;
 import se.lth.cs.srl.CompletePipeline;
 import se.lth.cs.srl.corpus.Predicate;
 import se.lth.cs.srl.corpus.Sentence;
 import se.lth.cs.srl.corpus.Word;
 import se.lth.cs.srl.corpus.Yield;
 import se.lth.cs.srl.options.CompletePipelineCMDLineOptions;
-import se.lth.cs.srl.options.FullPipelineOptions;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +25,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Properties;
 import java.util.Set;
 import java.util.TreeSet;
 

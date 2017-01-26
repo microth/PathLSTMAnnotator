@@ -2,21 +2,12 @@ package de.microth.pathlstm.annotation;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Properties;
 
 import edu.illinois.cs.cogcomp.annotation.Annotator;
 import edu.illinois.cs.cogcomp.annotation.AnnotatorException;
-import edu.illinois.cs.cogcomp.annotation.BasicAnnotatorService;
 import edu.illinois.cs.cogcomp.annotation.BasicTextAnnotationBuilder;
 import edu.illinois.cs.cogcomp.core.datastructures.ViewNames;
 import edu.illinois.cs.cogcomp.core.datastructures.textannotation.TextAnnotation;
-import edu.illinois.cs.cogcomp.core.utilities.configuration.Configurator;
-import edu.illinois.cs.cogcomp.core.utilities.configuration.ResourceManager;
-import edu.illinois.cs.cogcomp.nlp.tokenizer.StatefulTokenizer;
-import edu.illinois.cs.cogcomp.nlp.utility.TokenizerTextAnnotationBuilder;
-import edu.illinois.cs.cogcomp.pipeline.common.PipelineConfigurator;
-import edu.illinois.cs.cogcomp.pipeline.main.PipelineFactory;
 
 public class TestAnnotator {
 	public static void main(String[] args) {
