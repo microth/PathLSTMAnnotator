@@ -25,32 +25,6 @@ public class TestAnnotator {
 		List<String[]> sentences = new ArrayList<String[]>();
 		sentences.add("I have another meeting at 5pm".split(" "));
 		
-		/* Set up Illinois pipeline */
-		Properties nonDefaultProps = new Properties();
-		nonDefaultProps.put(PipelineConfigurator.USE_POS.key, Configurator.TRUE);
-		nonDefaultProps.put(PipelineConfigurator.USE_LEMMA.key, Configurator.TRUE);
-		nonDefaultProps.put(PipelineConfigurator.USE_SHALLOW_PARSE.key, Configurator.FALSE);
-		nonDefaultProps.put(PipelineConfigurator.USE_NER_CONLL.key, Configurator.FALSE);
-		nonDefaultProps.put(PipelineConfigurator.USE_NER_ONTONOTES.key, Configurator.FALSE);
-		nonDefaultProps.put(PipelineConfigurator.USE_STANFORD_DEP.key, Configurator.FALSE);
-		nonDefaultProps.put(PipelineConfigurator.USE_STANFORD_PARSE.key, Configurator.FALSE);
-		nonDefaultProps.put(PipelineConfigurator.USE_SRL_VERB.key, Configurator.FALSE);
-		nonDefaultProps.put(PipelineConfigurator.USE_SRL_NOM.key, Configurator.FALSE);
-   		ResourceManager rm = Configurator.mergeProperties(new PipelineConfigurator().getDefaultConfig(),
-				new ResourceManager(nonDefaultProps));
-   		
-   		/* Illinois preprocessing */
-   		BasicAnnotatorService as = null;   		
-   		Map<String, Annotator> annotators;
-		try {
-			annotators = PipelineFactory.buildAnnotators(rm);
-	   		//annotators.put(ViewNames.SRL_VERB, a);
-	   		as = new BasicAnnotatorService(new TokenizerTextAnnotationBuilder(new StatefulTokenizer()), annotators, rm);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
 		TextAnnotation annotation = BasicTextAnnotationBuilder.createTextAnnotationFromTokens("", "", sentences);
 		
 		/* SRL annotator */
